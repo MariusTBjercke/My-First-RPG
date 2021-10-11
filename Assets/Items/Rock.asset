@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2630dcfa6b4e10e43811df292825eba0, type: 3}
+  m_Name: Rock
+  m_EditorClassIdentifier: 
+  name: Sword
+  icon: {fileID: 21300000, guid: 442e729c33a39324b968150b8d11ce9e, type: 3}
+  isDefaultItem: 0
+  equipSlot: 3
+  mesh: {fileID: 1284871128440538985, guid: 7b5539e78c3cbd34784de2e3f3508a10, type: 3}
+  armorModifier: 0
+  damageModifier: 2
