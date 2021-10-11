@@ -18,11 +18,24 @@ public class HealthBar : MonoBehaviour
         fill.color = gradient.Evaluate(1f);
     }
 
-    public void SetHealth(int health)
+    public void SetHealth(int health, int maxHealth)
     {
-        slider.value = health;
-
+        StartCoroutine(DecreaseHealthBar(health, maxHealth));
         fill.color = gradient.Evaluate(slider.normalizedValue);
+    }
+
+    IEnumerator DecreaseHealthBar(int health, int maxHealth)
+    {
+        // Loop for health bar fill animation
+        for (int i = 0; i < maxHealth; i++)
+        {
+            float oldHealth = slider.value;
+            if (oldHealth > health)
+            {
+                slider.value -= 1;
+                yield return new WaitForSeconds(.01f);
+            }
+        }
     }
 
 }

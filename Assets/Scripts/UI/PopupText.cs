@@ -15,6 +15,7 @@ public class PopupText : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Quest.experienceAdded += ExperienceAddedText;
         playerStats = PlayerManager.instance.player.GetComponent<PlayerStats>();
         Invoke("WelcomeText", 4f);
     }
@@ -22,6 +23,12 @@ public class PopupText : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+    }
+
+    void ExperienceAddedText(int XP)
+    {
+        textElement.text = "You received " + XP + " experience!";
+        StartCoroutine(DisableText(delay));
     }
 
     void WelcomeText()

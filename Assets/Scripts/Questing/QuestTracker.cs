@@ -6,6 +6,17 @@ using UnityEngine.UI;
 public class QuestTracker : MonoBehaviour
 {
 
+    #region Singleton
+
+    public static QuestTracker instance;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    #endregion
+
     public Text topCenterText;
     public Text questName;
     public Text questDescription;
@@ -22,6 +33,7 @@ public class QuestTracker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        finishedQuests.Add(0);
         NpcDialogue.newQuestAdded += NewQuestPopup;
         NpcDialogue.questFinished += disableTrackerAddToFinished;
     }

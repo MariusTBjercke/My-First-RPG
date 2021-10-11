@@ -17,5 +17,5 @@ MonoBehaviour:
   isDefaultItem: 0
   equipSlot: 3
   mesh: {fileID: 3959112563106638148, guid: 12b3fa7452ea64945b928cbcaa1cda2c, type: 3}
-  armorModifier: 5
+  armorModifier: 0
   damageModifier: 10

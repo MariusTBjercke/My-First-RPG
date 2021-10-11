@@ -15,6 +15,9 @@ public class Quest : MonoBehaviour
     public Item ItemReward { get; set; }
     public bool Completed { get; set; }
 
+    public delegate void ExperienceAdded(int XP);
+    public static ExperienceAdded experienceAdded;
+
     public void CheckGoals()
     {
         Completed = Goals.All(g => true);
@@ -23,6 +26,11 @@ public class Quest : MonoBehaviour
 
     public void GiveReward()
     {
+        PlayerManager.instance.player.GetComponent<PlayerStats>().AddExperience(ExperienceReward);
+        if (experienceAdded != null)
+        {
+            experienceAdded(ExperienceReward);
+        }
         Destroy(this);
     }
 

@@ -7,7 +7,6 @@ public class DiggingForGold : Quest
 
     void Start()
     {
-        RequiredQuestID = 1;
         QuestID = 2;
         QuestName = "Digging For Gold";
         Description = "The Unknown man wants you to kill slimes.";

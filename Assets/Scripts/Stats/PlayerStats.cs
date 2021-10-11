@@ -5,9 +5,6 @@ using UnityEngine;
 public class PlayerStats : CharacterStats
 {
 
-	public int experience = 0;
-	public int gold = 0;
-
     // Use this for initialization
     void Start()
 	{
@@ -32,6 +29,12 @@ public class PlayerStats : CharacterStats
 			damage.RemoveModifier(oldItem.damageModifier);
 		}
 
+	}
+
+	public void AddExperience(int XP)
+    {
+		experience += XP;
+		experienceBar.SetExperience(experience);
 	}
 
     public override void Die()

@@ -26,6 +26,8 @@ public class NpcDialogue : Interactable
 
     public int requiredQuestID;
 
+    QuestTracker tracker;
+
     public delegate void NewQuestAdded();
     public static NewQuestAdded newQuestAdded;
 
@@ -36,6 +38,7 @@ public class NpcDialogue : Interactable
     void Start()
     {
         playerStats = PlayerManager.instance.player.GetComponent<PlayerStats>();
+        tracker = QuestTracker.instance.GetComponent<QuestTracker>();
     }
 
     private void Update()
@@ -59,7 +62,7 @@ public class NpcDialogue : Interactable
 
     void AssignQuest()
     {
-        if (requiredQuestID == 0)
+        if (tracker.finishedQuests.Contains(requiredQuestID))
         {
             AssignedQuest = true;
             Quest = (Quest)quests.AddComponent(System.Type.GetType(questType));
